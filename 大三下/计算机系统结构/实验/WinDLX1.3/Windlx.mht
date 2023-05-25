@@ -1,0 +1,215 @@
+From: <¨®¨¦ Microsoft Internet Explorer 5 ¡À¡ê¡ä?>
+Subject: Windlx
+Date: Tue, 30 Mar 2004 20:30:40 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://cs.uns.edu.ar/~jechaiz/arquitectura/windlx/windlx.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1165
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Windlx</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2800.1400" name=3DGENERATOR></HEAD>
+<BODY>
+<CENTER><I><FONT face=3D"Book Antiqua"><FONT color=3D#006600><FONT=20
+size=3D+3>WINDLX</FONT></FONT></FONT></I></CENTER>
+<P><BR>
+<CENTER>
+<TABLE cols=3D1 width=3D"46%" border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT size=3D+2><A=20
+      =
+href=3D"http://cs.uns.edu.ar/~jechaiz/arquitectura/windlx/WinDLX.zip">Dow=
+nload</A>=20
+      windlx_d.exe (for windows PC)</FONT>=20
+      <P><FONT size=3D+1>This program is a assembly interpreter for the =
+DLX=20
+      assembly language described in the text and in lecture. Please =
+read the=20
+      tutorials and the links to get yourself familiarized with =
+DLX.</FONT>=20
+      <P><FONT size=3D+1>WinDLX Links:</FONT>=20
+      <UL>
+        <LI><A=20
+        =
+href=3D"http://cs.uns.edu.ar/~jechaiz/arquitectura/windlx/DLXinst.html">T=
+he=20
+        DLX Instruction Set&nbsp;</A>=20
+        <LI><A=20
+        =
+href=3D"http://cs.uns.edu.ar/~jechaiz/arquitectura/windlx/wdlxtut.pdf">Wi=
+nDLX=20
+        help manual (.pdf)</A> =
+</LI></UL></TD></TR></TBODY></TABLE></CENTER>
+<CENTER>
+<TABLE cols=3D1 width=3D"75%" border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT face=3DVerdana><FONT color=3D#006600><FONT size=3D+2>A =
+quick start for=20
+      windlx.exe</FONT></FONT></FONT></TD></TR>
+  <TR>
+    <TD><U><FONT face=3D"Book Antiqua"><FONT size=3D+1>Source=20
+      code:</FONT></FONT></U>=20
+      <OL>
+        <LI>Source code can be edited by using any text editor and ends =
+with=20
+        extension .s. eg: program.s=20
+        <LI>The source code can be visualized as 3 portions. The =
+directives, the=20
+        DLX codes and the I/O traps.=20
+        <LI>The first portion contains the directives that are basically =
+
+        variables declarations, memory code and data pointers.=20
+        <LI>The DLX codes contain the DLX assembly language that has =
+been=20
+        presented in the class.=20
+        <LI>The I/O traps (trap 0 - trap 5) are part of the DLX codes =
+that deal=20
+        with files and standard I/O. </LI></OL>
+      <P><BR><TT>; eg: a typical program</TT>=20
+      <BR><TT>;--------------------------------------------</TT>=20
+      =
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;=20
+      .data</TT> <BR><TT>; Your directives</TT>=20
+      =
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;=20
+      .test</TT>=20
+      =
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;=20
+      .global main</TT> <BR><TT>main:</TT> <BR><TT>; Your DLX codes =
+start=20
+      here</TT> <BR>&nbsp;=20
+      <P><TT>; ******* end *******</TT> <BR>&nbsp;</P></TD></TR>
+  <TR>
+    <TD><U><FONT face=3D"Book Antiqua"><FONT=20
+      size=3D+1>Directives:</FONT></FONT></U>=20
+      <P>While the assembler is processing an assembly file, the data =
+and=20
+      instructions it assembles are placed in memory based on either a =
+text=20
+      (code) or data pointe. Which pointer is used is selected not by =
+the type=20
+      of information, but by whether the most recent directive was =
+<B>.data</B>=20
+      or <B>.text</B>. The program initially loads into the text =
+segment.=20
+      <P>The WinDLX assembler supports several directives that affect =
+how it=20
+      loads the DLX's memory. These should be entered in the place where =
+you=20
+      normally place the instructions and its arguments. Other =
+directives=20
+      supported are:=20
+      <P><B><TT><FONT size=3D+1>.align <I>n</I></FONT></TT></B> =
+<BR><TT>Cause the=20
+      next data/code loaded to be at the next higher address with the =
+lower=20
+      <I>n</I> bits zeroed.</TT>=20
+      <P><B><TT><FONT size=3D+1>.ascii "string1", =
+"string2",...</FONT></TT></B>=20
+      <BR><TT>Store the strings listed on the line in the memory as a =
+list of=20
+      characters. The strings are not terminated by a 0 byte.</TT>=20
+      <P><B><TT><FONT size=3D+1>.asciiz "string1", =
+"string2",...</FONT></TT></B>=20
+      <BR><TT>Similiar to .ascii except each string is followed by a 0=20
+      byte.</TT>=20
+      <P><B><TT><FONT size=3D+1>.byte "byte1", =
+"byte2",...</FONT></TT></B>=20
+      <BR><TT>Store the bytes listed on the line sequentially in =
+memory.</TT>=20
+      <P><B><TT><FONT size=3D+1>.double <I>number1</I>,=20
+      <I>number2</I>,...</FONT></TT></B> <BR><TT>Store the =
+<I>numbers</I> listed=20
+      on the line sequentially in memory as double-precision floating =
+point=20
+      numbers.</TT>=20
+      <P><B><TT><FONT size=3D+1>.float <I>number1</I>,=20
+      <I>number2</I>,...</FONT></TT></B> <BR><TT>Store the =
+<I>numbers</I> listed=20
+      on the line sequentially in memory as single-precision floating =
+point=20
+      numbers.</TT>=20
+      <P><B><TT><FONT size=3D+1>.global <I>label</I></FONT></TT></B> =
+<BR><TT>Make=20
+      the <I>label</I> available for reference by code found in files =
+loaded=20
+      after this file.</TT>=20
+      <P><B><TT><FONT size=3D+1>.space <I>size</I></FONT></TT></B> =
+<BR><TT>Move=20
+      the current storage pointer forward size bytes (to leave some =
+empty space=20
+      in memory)</TT>=20
+      <P><TT><B><FONT size=3D+1>.word <I>word1</I>,=20
+      <I>word2</I></FONT></B>,....</TT> <BR><TT>Store the <I>words</I> =
+listed on=20
+      the line sequentially in memory.</TT> <BR>&nbsp;</P></TD></TR>
+  <TR>
+    <TD><U><FONT face=3D"Book Antiqua"><FONT =
+size=3D+1>Traps:</FONT></FONT></U>=20
+      <P>Traps - the System Interface=20
+      <P>Traps build the interface between DLX programs and the =
+I/O-system.=20
+      There are five traps defined in WinDLX. Zero is an invalid =
+parameter for a=20
+      trap instruction, used to terminate a program.=20
+      <P>The Traps:=20
+      <UL>
+        <LI>Trap 0: Terminate a program.=20
+        <LI>Trap 1: Open File=20
+        <LI>Trap 2: Close File=20
+        <LI>Trap 3: Read Block from File=20
+        <LI>Trap 4: Write Block to File=20
+        <LI>Trap 5: Formatted Output to Standard-Output </LI></UL>For =
+all five=20
+      defined traps:=20
+      <UL>
+        <LI>They match the UNIX/DOS-System calls resp. =
+C-library-functions=20
+        open(), close(), read(), write() and printf().=20
+        <LI>The file descriptors 0,1 and 2 are reserved for the stdin, =
+stdout=20
+        and stderr. The input and output to the DLX-I/O-Windows can be=20
+        controlled with this descriptors.=20
+        <LI>The address of the required parameters for the system calls =
+must be=20
+        loaded in register R14.=20
+        <LI>All parameters have to be 32 bits long (except the =
+double-precision=20
+        FPs that are 64 bits long). Strings are referenced with their =
+begin=20
+        address.=20
+        <LI>The result is returned into R1.=20
+        <LI>If an error occurs during the execution of a system call, =
+register=20
+        R1 is set to -1 and: if the symbol "_errno" is set to value A, =
+then an=20
+        error code is returned at the memory address A and the =
+simulation=20
+        continues, otherwise the simulation is aborted. See MS-DOS =
+documentation=20
+        for details about the error codes. </LI></UL>Please refer to the =
+example=20
+      programs for the usage of traps. <BR>&nbsp;</TD></TR>
+  <TR>
+    <TD><U><FONT face=3D"Book Antiqua"><FONT size=3D+1>Loading and =
+Running the=20
+      program:</FONT></FONT></U>=20
+      <OL>
+        <LI>File-&gt;load Code or data (F3) to load the programs.=20
+        <LI>If codes are contained in multiple files, load the file with =
+the=20
+        main module first then followed by the files with subroutines.=20
+        <LI>Execute-&gt;Run (F5) to run the program.=20
+        <LI>Execute-&gt;Single cycle (F7) to step and debug the program, =
+
+        together with the code and register sub-windows.=20
+</LI></OL></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>
